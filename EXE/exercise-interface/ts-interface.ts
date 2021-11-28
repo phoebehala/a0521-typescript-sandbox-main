@@ -44,6 +44,7 @@ const ExerciseTwo = () => {
   
     console.log('[Exercise 2.2]', `${jane.name} is ${jane.age} years old.`)
   
+
     // ======== Exercise 2.3 ========
     // Instructions:
     // • Create an interface `Coords` that has numeric `latitude` and `longitude` properties.
@@ -64,13 +65,14 @@ const ExerciseTwo = () => {
     // [/do not edit]
   
     const montreal = {
-      coords: {
-        latitude: 42.332,
-        longitude: -73.324,
-      },
+     
+      latitude: 42.332,
+      longitude: -73.324,
+
       name: 'Montréal',
     }
-  
+    
+  // : City >> optional
     const tampa: City = {
       
       latitude: 27.9478,
@@ -89,7 +91,7 @@ const ExerciseTwo = () => {
       '[Exercise 2.3]',
       `${getCityInfo(montreal)} \n\n ${getCityInfo(tampa)}`
     )
-    
+
   
     // ======== Exercise 2.4 ========
     // The purpose of this exercise is simply to illustrate a use of `readonly`
