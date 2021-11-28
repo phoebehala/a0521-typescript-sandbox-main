@@ -31,7 +31,12 @@ const ExerciseTwo = () => {
     // • Create and implement an interface on `Person` to ensure it always has accessible
     //   `name` and `age` member properties.
   
-    class Person {
+    interface Human{
+      name: string;
+      age: number;
+    } 
+
+    class Person implements Human{
       constructor(public name: string, public age: number) {}
     }
   
