@@ -51,8 +51,14 @@ const ExerciseTwo = () => {
     //   `coords` property of type `Coords`.
     // • Fix whatever is wrong with `tampa`
   
+    interface Coords {
+      latitude: number;
+      longitude: number;
+
+    }
+
     // [do not edit] (pretend this is coming from external `foo.d.ts` lib)
-    interface City {
+    interface City  extends Coords{
       name: string
     }
     // [/do not edit]
@@ -65,18 +71,17 @@ const ExerciseTwo = () => {
       name: 'Montréal',
     }
   
-    const tampa = {
-      coords: {
-        latitude: '27.9478',
-        longitude: '-82.4584',
-      },
+    const tampa: City = {
+      
+      latitude: 27.9478,
+      longitude: -82.4584,
       name: 'Tampa',
     }
   
     function getCityInfo(city: City) {
-      const coords = `(${city.coords.latitude.toFixed(
+      const coords = `(${city.latitude.toFixed(
         3
-      )}, ${city.coords.longitude.toFixed(3)})`
+      )}, ${city.longitude.toFixed(3)})`
       return `${city.name.toUpperCase()} is located at ${coords}.`
     }
   
@@ -84,6 +89,7 @@ const ExerciseTwo = () => {
       '[Exercise 2.3]',
       `${getCityInfo(montreal)} \n\n ${getCityInfo(tampa)}`
     )
+    
   
     // ======== Exercise 2.4 ========
     // The purpose of this exercise is simply to illustrate a use of `readonly`
