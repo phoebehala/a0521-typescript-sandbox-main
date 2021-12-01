@@ -14,15 +14,15 @@ const ExerciseThree = () => {
   // • Add explicit parameter types and return type
   // • Fix any errors resulting from invalid types
 
-  function add(x, y) {
+  function add(x: number, y: number) {
     return x + y
   }
 
-  function sumArray(numbers) {
+  function sumArray(numbers: number[]) {
     return numbers.reduce(add, 0)
   }
 
-  const someSum = sumArray(['3', '6', '9'])
+  const someSum = sumArray([3, 6, 9])
 
   console.log('[Exercise 3.1]', `3 + 6 + 9 === ${someSum}`)
 
