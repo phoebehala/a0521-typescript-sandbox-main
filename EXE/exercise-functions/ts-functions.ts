@@ -114,15 +114,17 @@ const ExerciseThree = () => {
   let multiply: (val1: number, val2: number) => number
   let capitalize: (val: string) => string
 
-  multiply = function (value: string): string {
+  capitalize = function (value: string): string {
     return `${value.charAt(0).toUpperCase()}${value.slice(1)}`
   }
 
-  capitalize = function (x: number, y: number): number {
+  multiply = function (x: number, y: number): number {
     return x * y
   }
 
   console.log('[Exercise 3.6]', capitalize(`nifty ${multiply(5, 10)}`))
+
+
 
   // ======== Exercise 3.7 ========
   // Currently, our function `pushToCollection` accepts *any* item and adds it,
