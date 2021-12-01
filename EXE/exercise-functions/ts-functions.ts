@@ -146,19 +146,19 @@ const ExerciseThree = () => {
   const numberCollection: number[] = []
   const stringCollection: string[] = []
 
-  function pushToCollection(item, collection) {
+  function pushToCollection <T>(item:T, collection:T[]) {
     collection.push(item)
     return collection
   }
 
   // Add some stuff to the collections
-  pushToCollection(false, stringCollection)
+  pushToCollection('false', stringCollection)
   pushToCollection('hi', stringCollection)
-  pushToCollection([], stringCollection)
+  pushToCollection('[]', stringCollection)
 
-  pushToCollection('1', numberCollection)
-  pushToCollection('2', numberCollection)
-  pushToCollection('3', numberCollection)
+  pushToCollection(1, numberCollection)
+  pushToCollection(2, numberCollection)
+  pushToCollection(3, numberCollection)
 
   const incrementedByTwo = numberCollection.map((num) => num + 2)
 
