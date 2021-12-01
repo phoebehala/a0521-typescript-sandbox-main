@@ -97,7 +97,7 @@ const ExerciseThree = () => {
   // • Add parameter type annotation
   // • Even though this function doesn't return, add an explicit return type
 
-  function layEggs(quantity, color) {
+  function layEggs(quantity?: number, color?: string) {
     console.log(
       `[Exercise 3.5] You just laid ${quantity} ${color} eggs. Good job!`
     )
