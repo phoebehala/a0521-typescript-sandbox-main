@@ -51,12 +51,12 @@ const ExerciseThree = () => {
   // Instructions:
   // • Add type annotations wherever possible
 
-  function computeScore(word) {
+  function computeScore(word: string) {
     const letters = word.toUpperCase().split('')
     return letters.reduce((accum: number, curr:string) => (accum += getPointsFor(curr)), 0)
   }
 
-  function getPointsFor(letter) {
+  function getPointsFor(letter: string) {
     const lettersAndPoints: [string,number][] = [
       ['AEOIULNRST', 1],
       ['DG', 2],
@@ -68,7 +68,7 @@ const ExerciseThree = () => {
     ]
 
     return lettersAndPoints.reduce((computedScore, pointsTuple) => {
-      const [letters, score]:[] = pointsTuple
+      const [letters, score]:[string,number] = pointsTuple
       if (letters.split('').find((ll) => ll === letter)) {
         return (computedScore += score)
       }
@@ -83,7 +83,7 @@ const ExerciseThree = () => {
   // • Add explicit parameter types and return types
   // • Add a default greeting: "hello"
 
-  function greet(greeting) {
+  function greet(greeting: string = "hello") {
     return greeting.toUpperCase()
   }
 
