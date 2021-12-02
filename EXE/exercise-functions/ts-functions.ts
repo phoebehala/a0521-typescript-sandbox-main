@@ -14,11 +14,15 @@ const ExerciseThree = () => {
   // • Add explicit parameter types and return type
   // • Fix any errors resulting from invalid types
 
-  function add(x: number, y: number) {
+  function add(x: number, y: number): number {
     return x + y
   }
 
   function sumArray(numbers: number[]) {
+    return numbers.reduce(add, 0)
+  }
+
+  function sumArray2(numbers: Array<number>) {
     return numbers.reduce(add, 0)
   }
 
@@ -33,6 +37,7 @@ const ExerciseThree = () => {
 
   const bankAccount = {
     money: 0,
+    // :void >>> no return anything
     deposit(value: number, message?: string):void {
       this.money += value
       if (message) {
@@ -51,12 +56,12 @@ const ExerciseThree = () => {
   // Instructions:
   // • Add type annotations wherever possible
 
-  function computeScore(word: string) {
+  function computeScore(word: string): number {
     const letters = word.toUpperCase().split('')
     return letters.reduce((accum: number, curr:string) => (accum += getPointsFor(curr)), 0)
   }
 
-  function getPointsFor(letter: string) {
+  function getPointsFor(letter: string): number {
     const lettersAndPoints: [string,number][] = [
       ['AEOIULNRST', 1],
       ['DG', 2],
@@ -67,7 +72,7 @@ const ExerciseThree = () => {
       ['QZ', 10],
     ]
 
-    return lettersAndPoints.reduce((computedScore, pointsTuple) => {
+    return lettersAndPoints.reduce((computedScore: number, pointsTuple: [string,number]): number => {
       const [letters, score]:[string,number] = pointsTuple
       if (letters.split('').find((ll) => ll === letter)) {
         return (computedScore += score)
@@ -83,7 +88,7 @@ const ExerciseThree = () => {
   // • Add explicit parameter types and return types
   // • Add a default greeting: "hello"
 
-  function greet(greeting: string = "hello") {
+  function greet(greeting: string = "hello"): string {
     return greeting.toUpperCase()
   }
 
@@ -97,13 +102,14 @@ const ExerciseThree = () => {
   // • Add parameter type annotation
   // • Even though this function doesn't return, add an explicit return type
 
-  function layEggs(quantity?: number, color?: string) {
+  function layEggs(quantity?: number, color?: string): void {
     console.log(
       `[Exercise 3.5] You just laid ${quantity} ${color} eggs. Good job!`
     )
   }
 
   layEggs()
+  layEggs(2,'red')
 
   // ======== Exercise 3.6 ========
   // Here we've initialized two variables with function types.
